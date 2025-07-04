@@ -14,15 +14,7 @@ L'application offre deux fonctionnalités principales :
 ## 🏗️ Architecture Technique
 Le projet est basé sur une architecture microservices moderne, conçue pour séparer les responsabilités et permettre une scalabilité efficace.
 
-```mermaid
-graph TD
-    A[Utilisateur (Conseiller/Analyste)] -- Interagit avec --> B(Frontend: Streamlit);
-    B -- Requêtes HTTP --> C{API Backend: Flask};
-    C -- Lance des jobs --> D(Calculs Big Data: Databricks);
-    C -- Récupère les logs --> E(Monitoring: Azure App Insights);
-    C -- Récupère les données personnelles --> F(Base de données: MongoDB);
-    D -- Lit les données de crédit --> G[Stockage: DBFS];
-```
+![Schéma d'architecture](./assets/Architecture_schema.png)
 
 **Frontend** (client_prediction.py, data_analysis.py) : Construit avec **Streamlit** pour une interface utilisateur réactive et facile à développer.
 
@@ -150,7 +142,8 @@ L'application s'ouvrira automatiquement dans votre navigateur à l'adresse `http
 │   └── 3_Analyse_de_Données.py # Page Streamlit pour l'analyse
 ├── assets/                 # Images
 │   └── logo.png           
-│   └── risk_banking.png         
+│   └── risk_banking.png
+│   └── Architecture_schema.png  
 ├── requirements.txt        # Dépendances Python
 ├── .env                    # Fichier pour les variables d'environnement
 └── README.md               # Ce fichier
